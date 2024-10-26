@@ -1,0 +1,6 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cfll3mt2npsjq"]
+
+[ext_resource type="FontFile" uid="uid://nkcfri82s56a" path="res://assets/fonts/HarmonyOS_Sans_SC_Medium.woff2" id="1_7rd70"]
+
+[resource]
+font = ExtResource("1_7rd70")

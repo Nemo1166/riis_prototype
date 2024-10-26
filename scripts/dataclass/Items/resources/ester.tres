@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://b3n3iu3mwixm6"]
+
+[ext_resource type="Script" path="res://scripts/dataclass/Item.gd" id="1_d0i7l"]
+
+[resource]
+script = ExtResource("1_d0i7l")
+name = "酯"
+unit_space = 1.5
+category = 0
+is_smelt = false
+smelt_time = 0.0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://jujllblvpqje"]
+
+[ext_resource type="Script" path="res://scripts/dataclass/Item.gd" id="1_6wq3s"]
+
+[resource]
+script = ExtResource("1_6wq3s")
+name = "铁"
+unit_space = 1.0
+category = 0
+is_smelt = false
+smelt_time = 0.0

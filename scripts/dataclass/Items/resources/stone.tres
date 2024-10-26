@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://chx0ci6jwh0j5"]
+
+[ext_resource type="Script" path="res://scripts/dataclass/Item.gd" id="1_weruq"]
+
+[resource]
+script = ExtResource("1_weruq")
+name = "岩"
+unit_space = 1.0
+category = 0
+is_smelt = false
+smelt_time = 0.0

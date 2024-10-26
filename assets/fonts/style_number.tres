@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bbjnhjp84fvtq"]
+
+[ext_resource type="FontFile" uid="uid://blie8d7uxdap6" path="res://assets/fonts/BENDER.OTF" id="1_ubexr"]
+
+[resource]
+font = ExtResource("1_ubexr")
+font_size = 24
