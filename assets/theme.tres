@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://biropmhscstea"]
+
+[ext_resource type="FontFile" uid="uid://nkcfri82s56a" path="res://assets/fonts/HarmonyOS_Sans_SC_Medium.woff2" id="1_7ipxx"]
+
+[resource]
+default_font = ExtResource("1_7ipxx")
+default_font_size = 16
