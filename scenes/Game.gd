@@ -1,11 +1,11 @@
 extends Control
 
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
-@onready var show_fps: Label = $FreamStat/showFPS
-@onready var show_fgen: Label = $FreamStat/showFgen
+@onready var show_fps: Label = $UILayer/FrameStat/showFPS
+@onready var show_fgen: Label = $UILayer/FrameStat/showFgen
 @onready var warehouse_volume: ProgressBar = $LfetPanel/ProgressBar
-@onready var today: Label = $UILayer/Today
-@onready var avail_acts: Label = $UILayer/AvailActs
+@onready var today: Label = $UILayer/Time/Today
+@onready var avail_acts: Label = $UILayer/Time/AvailActs
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

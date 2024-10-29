@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://d27sdmplcpuf2"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d27sdmplcpuf2"]
 
+[ext_resource type="Texture2D" uid="uid://daqsiy20nuy2i" path="res://assets/image/Items/道具_带框_异铁.png" id="1_b1ok6"]
 [ext_resource type="Script" path="res://scripts/dataclass/Item.gd" id="1_jj2i6"]
 
 [resource]
 script = ExtResource("1_jj2i6")
 name = "异铁"
+icon = ExtResource("1_b1ok6")
 unit_space = 2.0
 category = 1
 is_smelt = false

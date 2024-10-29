@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://jx7x5pqbw81u"]
+
+[ext_resource type="Script" path="res://scripts/dataclass/Item.gd" id="1_lmrt8"]
+
+[resource]
+script = ExtResource("1_lmrt8")
+name = "异铁组"
+unit_space = 4.0
+category = 2
+is_smelt = false
+smelt_time = 0.0

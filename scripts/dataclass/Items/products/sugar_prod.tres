@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://lbsrbelivufa"]
+
+[ext_resource type="Script" path="res://scripts/dataclass/Item.gd" id="1_akgx4"]
+
+[resource]
+script = ExtResource("1_akgx4")
+name = "糖聚块"
+unit_space = 3.0
+category = 2
+is_smelt = false
+smelt_time = 0.0

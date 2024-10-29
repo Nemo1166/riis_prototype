@@ -11,6 +11,7 @@ enum Category {
 
 # 基本属性
 @export var name: String = ""
+@export var icon: Texture = null
 @export var unit_space: float = 0.0
 @export var category: Category = Category.other
 

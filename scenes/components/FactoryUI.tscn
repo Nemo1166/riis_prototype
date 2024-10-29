@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvgb42ixu67vh"]
+
+[ext_resource type="Script" path="res://scenes/components/factory_ui.gd" id="1_7aqx0"]
+[ext_resource type="LabelSettings" uid="uid://c1h8htpl43tff" path="res://assets/fonts/style_subtitle.tres" id="1_c4kns"]
+[ext_resource type="Texture2D" uid="uid://u2cmynuw2ert" path="res://assets/image/PH.tres" id="2_ehgbq"]
+[ext_resource type="FontFile" uid="uid://b3jym8d2bhsyy" path="res://assets/fonts/ak-icons.ttf" id="3_edbb6"]
+[ext_resource type="FontFile" uid="uid://blie8d7uxdap6" path="res://assets/fonts/BENDER.OTF" id="4_2ts5b"]
+[ext_resource type="Texture2D" uid="uid://rcmatslub53t" path="res://icon.svg" id="5_l6cno"]
+[ext_resource type="LabelSettings" uid="uid://5j47d8xfvkoj" path="res://assets/fonts/style_number_small.tres" id="6_o1q6g"]
+
+[node name="FactoryUI" type="Control"]
+custom_minimum_size = Vector2(300, 192)
+layout_mode = 3
+offset_right = 300.0
+offset_bottom = 192.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_7aqx0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 192.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Top" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "甲"
+label_settings = ExtResource("1_c4kns")
+
+[node name="Build" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_edbb6")
+text = "建造"
+
+[node name="SetCraftPlan" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Top"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_edbb6")
+text = "设置
+生产计划"
+
+[node name="Settings" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2ts5b")
+placeholder_text = "0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_l6cno")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "最大生产   60
+可生产      0"
+label_settings = ExtResource("6_o1q6g")
+
+[node name="PopupPanel" type="PopupPanel" parent="MarginContainer"]
+initial_position = 4
+size = Vector2i(100, 120)
+
+[node name="CraftPlanSelector" type="ItemList" parent="MarginContainer/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 116.0
+item_count = 4
+max_columns = 2
+same_column_width = true
+item_0/text = "源岩"
+item_0/icon = ExtResource("2_ehgbq")
+item_1/text = "糖组"
+item_1/icon = ExtResource("2_ehgbq")
+item_2/text = "异铁"
+item_2/icon = ExtResource("2_ehgbq")
+item_3/text = "聚酯"
+item_3/icon = ExtResource("2_ehgbq")
+
+[connection signal="button_up" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Top/Build" to="." method="_on_build_button_up"]
+[connection signal="button_up" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Top/SetCraftPlan" to="." method="_on_set_craft_plan_button_up"]
+[connection signal="item_clicked" from="MarginContainer/PopupPanel/CraftPlanSelector" to="." method="_on_craft_plan_selector_item_clicked"]

@@ -14,10 +14,18 @@ var items: Dictionary = {
 	'iron_pkg': load("res://scripts/dataclass/Items/materials/iron_pkg.tres"),
 	'ester_pkg': load("res://scripts/dataclass/Items/materials/ester_pkg.tres"),
 	# prod
-	#'stone_pkg': load("res://scripts/dataclass/Items/materials/stone_pkg.tres"),
-	#'sugar_pkg': load("res://scripts/dataclass/Items/materials/sugar_pkg.tres"),
-	#'iron_pkg': load("res://scripts/dataclass/Items/materials/iron_pkg.tres"),
-	#'ester_pkg': load("res://scripts/dataclass/Items/materials/ester_pkg.tres"),
+	'stone_prod': load("res://scripts/dataclass/Items/products/stone_prod.tres"),
+	'sugar_prod': load("res://scripts/dataclass/Items/products/sugar_prod.tres"),
+	'iron_prod': load("res://scripts/dataclass/Items/products/iron_prod.tres"),
+	'ester_prod': load("res://scripts/dataclass/Items/products/ester_prod.tres"),
+}
+
+enum CREDIT {
+	LMD
+}
+
+var wallet = {
+	CREDIT.LMD: 10000
 }
 
 func _ready() -> void:

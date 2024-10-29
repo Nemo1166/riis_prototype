@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c74cjxesyjx42"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c74cjxesyjx42"]
 
 [ext_resource type="Script" path="res://scripts/dataclass/Item.gd" id="1_11cwd"]
+[ext_resource type="Texture2D" uid="uid://ct33qxi8gkxkk" path="res://assets/image/Items/道具_带框_糖.png" id="1_y4sc8"]
 
 [resource]
 script = ExtResource("1_11cwd")
 name = "糖组"
+icon = ExtResource("1_y4sc8")
 unit_space = 1.5
 category = 1
 is_smelt = false

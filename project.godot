@@ -24,6 +24,11 @@ ResourceMgr="*res://scripts/Global/ResourceMgr.gd"
 [display]
 
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/radial_progress/plugin.cfg")
 
 [rendering]
 

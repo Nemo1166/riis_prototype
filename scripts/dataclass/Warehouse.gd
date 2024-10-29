@@ -10,7 +10,7 @@ var used_space: float = 0
 var inventory: Dictionary = {}
 
 # 初始化仓库
-func _init(_name: String = '0', _capacity = 1000):
+func _init(_name: String = '0', _capacity = 10000):
 	self.title = _name
 	self.capacity = _capacity
 
@@ -67,3 +67,10 @@ func get_status():
 	print("当前库存:")
 	for item in inventory.keys():
 		print("- 物品:", item.name, " 数量:", inventory[item], " 单位占地:", item.unit_space)
+
+
+func has_item(item: Item, quantity: int) -> bool:
+	if inventory.has(item) and inventory[item] >= quantity:
+		return true
+	else:
+		return false

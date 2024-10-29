@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://q8x0slfdqhqx"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://q8x0slfdqhqx"]
 
 [ext_resource type="Script" path="res://scripts/dataclass/Item.gd" id="1_0u4tk"]
+[ext_resource type="Texture2D" uid="uid://bpvb6c0pc57gt" path="res://assets/image/Items/道具_带框_聚酸酯.png" id="1_ylqte"]
 
 [resource]
 script = ExtResource("1_0u4tk")
 name = "聚酯"
+icon = ExtResource("1_ylqte")
 unit_space = 2.0
 category = 1
 is_smelt = false
