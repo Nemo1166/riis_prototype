@@ -4,13 +4,14 @@
 [ext_resource type="LabelSettings" uid="uid://c1h8htpl43tff" path="res://assets/fonts/style_subtitle.tres" id="1_c4kns"]
 [ext_resource type="Texture2D" uid="uid://u2cmynuw2ert" path="res://assets/image/PH.tres" id="2_ehgbq"]
 [ext_resource type="FontFile" uid="uid://b3jym8d2bhsyy" path="res://assets/fonts/ak-icons.ttf" id="3_edbb6"]
-[ext_resource type="FontFile" uid="uid://blie8d7uxdap6" path="res://assets/fonts/BENDER.OTF" id="4_2ts5b"]
 [ext_resource type="Texture2D" uid="uid://rcmatslub53t" path="res://icon.svg" id="5_l6cno"]
 [ext_resource type="LabelSettings" uid="uid://5j47d8xfvkoj" path="res://assets/fonts/style_number_small.tres" id="6_o1q6g"]
+[ext_resource type="Theme" uid="uid://biropmhscstea" path="res://assets/theme.tres" id="7_xb7qn"]
 
 [node name="FactoryUI" type="Control"]
 custom_minimum_size = Vector2(300, 192)
 layout_mode = 3
+anchors_preset = 0
 offset_right = 300.0
 offset_bottom = 192.0
 size_flags_horizontal = 0
@@ -38,6 +39,7 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Top" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,19 +70,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings"]
-layout_mode = 2
-
-[node name="HSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings/HBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_2ts5b")
-placeholder_text = "0"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Settings"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -103,6 +92,7 @@ label_settings = ExtResource("6_o1q6g")
 [node name="PopupPanel" type="PopupPanel" parent="MarginContainer"]
 initial_position = 4
 size = Vector2i(100, 120)
+theme = ExtResource("7_xb7qn")
 
 [node name="CraftPlanSelector" type="ItemList" parent="MarginContainer/PopupPanel"]
 offset_left = 4.0

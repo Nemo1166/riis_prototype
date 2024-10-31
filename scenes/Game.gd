@@ -1,16 +1,14 @@
 extends Control
 
-@onready var rich_text_label: RichTextLabel = $RichTextLabel
 @onready var show_fps: Label = $UILayer/FrameStat/showFPS
 @onready var show_fgen: Label = $UILayer/FrameStat/showFgen
 @onready var warehouse_volume: ProgressBar = $LfetPanel/ProgressBar
 @onready var today: Label = $UILayer/Time/Today
 @onready var avail_acts: Label = $UILayer/Time/AvailActs
+@onready var sell_pool: GridContainer = $"RightPanel/TabContainer/出售/GridContainer"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	rich_text_label.bbcode_enabled = true
-	rich_text_label.text = 'aaa'+PlayerStats.lmd.gen_tag()+'bbb'
 	pass # Replace with function body.
 
 
@@ -29,7 +27,16 @@ func _process(delta: float) -> void:
 
 
 func _on_end_day_button_up() -> void:
+	$"RightPanel/TabContainer/制造/FactoryUI".produce()
+	$"RightPanel/TabContainer/制造/FactoryUI2".produce()
+	$"RightPanel/TabContainer/制造/FactoryUI3".produce()
+	$"RightPanel/TabContainer/制造/FactoryUI4".produce()
 	Global.end_a_day()
+	var sell_prod = preload("res://scenes/components/sell_item.tscn")
+	sell_prod = sell_prod.instantiate()
+	sell_prod.init(preload("res://scripts/dataclass/Items/materials/stone_pkg.tres"), 6, 2000)
+	sell_pool.add_child(sell_prod)
+	
 
 
 func _on_mine_1_button_up() -> void:

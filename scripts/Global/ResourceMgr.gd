@@ -25,7 +25,7 @@ enum CREDIT {
 }
 
 var wallet = {
-	CREDIT.LMD: 10000
+	CREDIT.LMD: 1000
 }
 
 func _ready() -> void:

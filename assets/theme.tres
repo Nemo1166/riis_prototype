@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://biropmhscstea"]
 
-[ext_resource type="FontFile" uid="uid://nkcfri82s56a" path="res://assets/fonts/HarmonyOS_Sans_SC_Medium.woff2" id="1_7ipxx"]
+[ext_resource type="FontFile" uid="uid://b3jym8d2bhsyy" path="res://assets/fonts/ak-icons.ttf" id="1_m1t1g"]
 
 [resource]
-default_font = ExtResource("1_7ipxx")
+default_font = ExtResource("1_m1t1g")
 default_font_size = 16

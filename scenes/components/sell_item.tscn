@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvfc25vxir28a"]
+
+[ext_resource type="Script" path="res://scenes/components/sell_item.gd" id="1_kdkpy"]
+[ext_resource type="Resource" uid="uid://d27sdmplcpuf2" path="res://scripts/dataclass/Items/materials/iron_pkg.tres" id="2_js1c2"]
+[ext_resource type="Texture2D" uid="uid://36jfv2ckaeq" path="res://assets/image/Items/道具_带框_固源岩组.png" id="3_mi75x"]
+[ext_resource type="LabelSettings" uid="uid://5j47d8xfvkoj" path="res://assets/fonts/style_number_small.tres" id="4_c8pch"]
+[ext_resource type="Theme" uid="uid://biropmhscstea" path="res://assets/theme.tres" id="5_c5q1e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hnh1"]
+bg_color = Color(1, 1, 1, 0.12549)
+
+[node name="SellItem" type="MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(192, 64)
+anchors_preset = -1
+anchor_right = 0.166667
+anchor_bottom = 0.0987654
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kdkpy")
+item = ExtResource("2_js1c2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_mi75x")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 45.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="HBoxContainer/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "9"
+label_settings = ExtResource("4_c8pch")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("5_c5q1e")
+bbcode_enabled = true
+text = "-->      [char=e61c] 100"
+fit_content = true
+scroll_active = false
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hnh1")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

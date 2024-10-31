@@ -14,6 +14,8 @@ func _init(_name: String = '0', _capacity = 10000):
 	self.title = _name
 	self.capacity = _capacity
 
+signal item_changed(item: Item, quantity: int)
+
 # 存入物品
 func store_item(item: Resource, quantity: int) -> int:
 	var total_size = quantity * item.unit_space
@@ -39,6 +41,7 @@ func store_item(item: Resource, quantity: int) -> int:
 	# 更新已用空间
 	used_space += quantity * item.unit_space
 	print("已存入物品:", item.name, " 数量:", quantity)
+	item_changed.emit(item, quantity)
 	return quantity  # 返回实际存入的数量
 
 # 取出物品
@@ -49,12 +52,13 @@ func remove_item(item: Resource, quantity: int) -> bool:
 		
 		# 更新库存
 		inventory[item] -= quantity
-		if inventory[item] <= 0:
-			inventory.erase(item)
+		# if inventory[item] <= 0:
+		# 	inventory.erase(item)
 
 		# 更新已用空间
 		used_space -= total_size
 		print("已取出物品:", item.name, "数量:", quantity)
+		item_changed.emit(item, -quantity)
 		return true
 	else:
 		print("库存中没有足够的物品")
@@ -69,8 +73,8 @@ func get_status():
 		print("- 物品:", item.name, " 数量:", inventory[item], " 单位占地:", item.unit_space)
 
 
-func has_item(item: Item, quantity: int) -> bool:
-	if inventory.has(item) and inventory[item] >= quantity:
-		return true
+func has_item(item: Item) -> int:
+	if inventory.has(item):
+		return inventory[item]
 	else:
-		return false
+		return -1
